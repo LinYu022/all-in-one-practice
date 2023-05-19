@@ -25,3 +25,4 @@ def student_page(request):
 
 def teacher_page(request):
     return render(request, 'teacher.html')
+
