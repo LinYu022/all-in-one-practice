@@ -16,7 +16,7 @@ def login(request):
 
 
 def admin_page(request):
-    return render(request, 'admin.html')
+    return render(request, 'site_admin.html')
 
 
 def student_page(request):

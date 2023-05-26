@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Page</title>
+    <title>Register</title>
 </head>
 <body>
-<h1>Welcome to the Admin Page!</h1>
-
-<!--添加学生信息-->
-<form method="post" action="/add_student/">
+<h1>Register</h1>
+<!--学生注册-->
+<form method="post" action="/stu_register/">
     {% csrf_token %}
     <label for="sid">学号:</label>
     <input type="text" name="sid" id="sid">
     <br>
-    <label for="name">姓名:</label>
-    <input type="text" name="name" id="name">
+    <label for="stu_password">密码:</label>
+    <input type="password" name="stu_password" id="stu_password">
     <br>
-    <label for="stu_phone">手机号码:</label>
+    <label for="stu_name">姓名:</label>
+    <input type="text" name="stu_name" id="stu_name">
+    <br>
+    <label for="stu_phone">电话:</label>
     <input type="text" name="stu_phone" id="stu_phone">
     <br>
     <label for="stu_email">邮箱:</label>
     <input type="email" name="stu_email" id="stu_email">
     <br>
-    <label for="bjid">班级:</label>
+    <label for="bjid">班级编号:</label>
     <input type="text" name="bjid" id="bjid">
     <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="register">
 </form>
 
-<!--添加教师信息-->
-<form method="post" action="/add_teacher/">
+<!--教师注册-->
+<form method="post" action="/t_register/">
     {% csrf_token %}
     <label for="tid">教师编号:</label>
     <input type="text" name="tid" id="tid">
+    <br>
+    <label for="tid">密码:</label>
+    <input type="password" name="tpassword" id="tpassword">
     <br>
     <label for="tname">姓名:</label>
     <input type="text" name="tname" id="tname">
@@ -42,7 +47,7 @@
     <label for="temail">邮箱:</label>
     <input type="email" name="temail" id="temail">
     <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="register">
 </form>
 </body>
 </html>
