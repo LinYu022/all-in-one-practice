@@ -20,12 +20,11 @@ class tb_teacher(models.Model):
     email = models.CharField(max_length=20, null=True)
 
 
-# 管理员信息表
-class tb_admin(models.Model):
-    uid = models.IntegerField(primary_key=True, null=False)  # 管理员编号
-    password = models.CharField(max_length=20, null=False)
-    username = models.CharField(max_length=20, null=True)
-
+# # 管理员信息表
+# class tb_admin(models.Model):
+#     uid = models.IntegerField(primary_key=True, null=False)  # 管理员编号
+#     password = models.CharField(max_length=20, null=False)
+#     username = models.CharField(max_length=20, null=True)
 
 # 试卷信息表
 class tb_questionpaper(models.Model):

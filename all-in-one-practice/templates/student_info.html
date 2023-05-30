@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student_information</title>
+</head>
+<body>
+<ul>
+    {% for student in students %}
+    <li>学号-姓名-电话-邮箱-班级号：{{ student.sid }} - {{ student.name }} - {{ student.phone }} - {{ student.email }} - {{ student.bjid }}
+        <form method="post" action="/update_student/">
+            {% csrf_token %}
+            <input type="hidden" name="sid" value="{{ student.sid }}">
+            姓名：<input type="text" name="name"><br>
+            电话：<input type="text" name="phone"><br>
+            邮箱：<input type="text" name="email"><br>
+            班级号：<input type="text" name="bjid"><br>
+            <input type="submit" value="修改">
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

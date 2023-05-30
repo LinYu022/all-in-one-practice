@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Video</title>
+</head>
+<body>
+    <h1>Upload Video</h1>
+    <form action="{% url '上传视频' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="video">
+        <input type="submit" value="上传">
+    </form>
+</body>
+</html>

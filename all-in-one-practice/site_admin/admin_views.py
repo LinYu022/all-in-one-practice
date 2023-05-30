@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from database.models import tb_student, tb_teacher
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
@@ -26,3 +27,19 @@ def add_teacher(request):
     teacher = tb_teacher(tid=tid, tname=tname, phone=tphone, email=temail)
     teacher.save()
     return HttpResponse("<p>数据添加成功！</p>")
+
+
+def update_student(request):
+    if request.method == 'POST':
+        student_id = request.POST['sid']
+        student = tb_student.objects.get(sid=student_id)
+        student.name = request.POST['name']
+        student.phone = request.POST['phone']
+        student.email = request.POST['email']
+        student.bjid = request.POST['bjid']
+        student.save()
+        return redirect('student_info')
+    else:
+        return render(request, 'student_info.html')
+
+# def update_teacher(request):

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>teacher_information</title>
+</head>
+<body>
+<ul>
+    {% for teacher in teachers %}
+    <li>教师编号-姓名-电话-邮箱：{{ teacher.tid }} - {{ teacher.tname }} - {{ teacher.phone }} - {{ teacher.email }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
